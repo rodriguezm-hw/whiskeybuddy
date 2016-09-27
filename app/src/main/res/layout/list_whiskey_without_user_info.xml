@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/whiskeyDetails"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
+        android:orientation="vertical">
+
+        <!-- Whiskey name -->
+        <TextView
+            android:id="@+id/whiskeyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dip"/>
+
+        <!-- details -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- rating -->
+            <TextView
+                android:id="@+id/whiskeyRatingLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dip"
+                android:text="Rating: "/>
+
+            <TextView
+                android:id="@+id/whiskeyRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dip"/>
+
+            <!-- cost -->
+            <TextView
+                android:id="@+id/whiskeyCostLabel"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dip"
+                android:text="Cost: "/>
+
+            <TextView
+                android:id="@+id/whiskeyCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dip"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- Right arrow -->
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1">
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/ic_right_arrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

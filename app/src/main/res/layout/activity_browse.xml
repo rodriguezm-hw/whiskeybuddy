@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="85"
+        android:orientation="horizontal" >
+
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_weight="33"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/layoutStyle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_weight="33"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp" >
+
+            <LinearLayout
+                android:id="@+id/layoutCost"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </ScrollView>
+
+        <com.palcoholics.whiskeybuddy.widget.RangeBar.RangeBar
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ratingBar"
+            android:layout_width="0dp"
+            android:layout_weight="33"
+            android:layout_height="fill_parent"
+            custom:tickCount="10" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnViewMatches"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="View Matches" />
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WhiskeyBuddy</string>
+    <string name="search_hint">Search whiskeys</string>
+    <string name="search_title">Search</string>
+    <string name="catalog_title">Catalog</string>
+    <string name="favorites_title">Favorites</string>
+
+    <string name="title_activity_search_results">SearchResultsActivity</string>
+    <string name="search_results_title">Search results</string>
+
+    <string name="title_no_network_error">No network connection</string>
+    <string name="message_no_network_error">No network connection is available. Only favorites information will be accessible.</string>
+
+    <string name="facebook_app_id">1782697218635271</string>
+</resources>
