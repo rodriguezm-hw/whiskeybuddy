@@ -88,7 +88,7 @@ public class SearchResultsActivity extends AppCompatActivity {
         //update header based on search results
         String title = getResources().getString(R.string.search_results_title);
         if(searchResults != null){
-            title = title + " (" + searchResults.size() + "0)";
+            title = title + " (" + searchResults.size() + ")";
         }
         setTitle(title);
 

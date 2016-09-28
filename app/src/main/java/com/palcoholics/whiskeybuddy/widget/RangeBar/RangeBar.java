@@ -239,7 +239,7 @@ public class RangeBar extends View {
 
         // Initialize thumbs to the desired indices
         mTopThumb.setY(marginTop + (mTopIndex / (float) (mTickCount - 1)) * barHeight);
-        mBottomThumb.setY(marginTop + (mTopIndex / (float) (mTickCount - 1)) * barHeight);
+        mBottomThumb.setY(marginTop + (mBottomIndex / (float) (mTickCount - 1)) * barHeight);
 
         // Set the thumb indices.
         final int newTopIndex = mBar.getNearestTickIndex(mTopThumb);
@@ -512,7 +512,7 @@ public class RangeBar extends View {
      * @return the 0-based index of the bottom thumb
      */
     public int getBottomIndex() {
-        return mTopIndex;
+        return mBottomIndex;
     }
 
     /**
@@ -521,7 +521,7 @@ public class RangeBar extends View {
      * @return the 0-based index of the top thumb
      */
     public int getTopIndex() {
-        return mBottomIndex;
+        return mTopIndex;
     }
 
     // Private Methods /////////////////////////////////////////////////////////
@@ -640,7 +640,7 @@ public class RangeBar extends View {
 
         // Initialize thumbs to the desired indices
         mTopThumb.setY(marginTop + (mTopIndex / (float) (mTickCount - 1)) * barHeight);
-        mBottomThumb.setY(marginTop + (mTopIndex / (float) (mTickCount - 1)) * barHeight);
+        mBottomThumb.setY(marginTop + (mBottomIndex / (float) (mTickCount - 1)) * barHeight);
 
         invalidate();
     }

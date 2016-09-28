@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -28,6 +30,9 @@ import com.palcoholics.whiskeybuddy.model.Cost;
 import com.palcoholics.whiskeybuddy.model.Style;
 import com.palcoholics.whiskeybuddy.model.UserWhiskey;
 import com.palcoholics.whiskeybuddy.model.Whiskey;
+import com.palcoholics.whiskeybuddy.widget.RangeBar.RangeBar;
+
+import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -49,6 +54,8 @@ public class BrowseFragment extends Fragment implements RefreshableFragment {
     //UI controls
     private HashMap<ToggleButton, String> styleButtonMap;
     private HashMap<ToggleButton, String> costButtonMap;
+    private TextView textRatingRange;
+    private RangeBar ratingFilter;
 
     //RefreshableFragment method
     // called to refresh the list of whiskeys from the updated whiskey database
@@ -74,6 +81,8 @@ public class BrowseFragment extends Fragment implements RefreshableFragment {
         userWhiskeyDb = UserWhiskeyDb.getInstance(getContext());
 
         //create style buttons
+        ((ScrollView)v.findViewById(R.id.scrollStyle)).setFadingEdgeLength(150);
+
         ArrayList<Style> styles = styleDb.getAllStyles();
         Collections.sort(styles, new Comparator<Style>() {
             @Override
@@ -103,6 +112,8 @@ public class BrowseFragment extends Fragment implements RefreshableFragment {
         }
 
         //create cost buttons
+        ((ScrollView)v.findViewById(R.id.scrollCost)).setFadingEdgeLength(150);
+
         ArrayList<Cost> costs = costDb.getAllCosts();
         Collections.sort(costs, new Comparator<Cost>() {
             @Override
@@ -130,6 +141,20 @@ public class BrowseFragment extends Fragment implements RefreshableFragment {
             costButtonMap.put(button, c.getId());
             costContainer.addView(button);
         }
+
+        //rating filter bar
+        textRatingRange = (TextView)v.findViewById(R.id.textRatingRange);
+
+        ratingFilter = (RangeBar)v.findViewById(R.id.ratingBar);
+        ratingFilter.setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() {
+            @Override
+            public void onIndexChangeListener(RangeBar rangeBar, int topThumbIndex, int bottomThumbIndex) {
+                String minRating = Double.toString((topThumbIndex/2.0));
+                String maxRating = Double.toString((bottomThumbIndex/2.0));
+
+                textRatingRange.setText(minRating + " - " + maxRating);
+            }
+        });
 
         //set up search button
         Button viewButton = (Button)v.findViewById(R.id.btnViewMatches);
@@ -204,39 +229,15 @@ public class BrowseFragment extends Fragment implements RefreshableFragment {
         //determine selected ratings
         boolean filterByRatings = false;
         ArrayList<Float> ratings = new ArrayList<Float>();
+        double minValue = ratingFilter.getTopIndex()/2.0;
+        double maxValue = ratingFilter.getBottomIndex()/2.0;
 
-        /*
-        ToggleButton rating = (ToggleButton)getActivity().findViewById(R.id.toggleNoStars);
-        if(rating.isChecked()) { ratings.add((float)0.0); }
-        else { filterByRatings = true; }
-
-        rating = (ToggleButton)getActivity().findViewById(R.id.toggleOneStar);
-        if(rating.isChecked()) { ratings.add((float)0.5); ratings.add((float)1); }
-        else { filterByRatings = true; }
-
-        rating = (ToggleButton)getActivity().findViewById(R.id.toggleTwoStar);
-        if(rating.isChecked()) { ratings.add((float)1.5); ratings.add((float)2); }
-        else { filterByRatings = true; }
-
-        rating = (ToggleButton)getActivity().findViewById(R.id.toggleThreeStar);
-        if(rating.isChecked()) { ratings.add((float)2.5); ratings.add((float)3); }
-        else { filterByRatings = true; }
-
-        rating = (ToggleButton)getActivity().findViewById(R.id.toggleFourStar);
-        if(rating.isChecked()) { ratings.add((float)3.5); ratings.add((float)4); }
-        else { filterByRatings = true; }
-
-        rating = (ToggleButton)getActivity().findViewById(R.id.toggleFiveStar);
-        if(rating.isChecked()) { ratings.add((float)4.5); ratings.add((float)5); }
-        else { filterByRatings = true; }
-
-        if(ratings.size() <= 0){
-            Toast.makeText(getActivity(), "Please select at least one value from each category.", Toast.LENGTH_SHORT).show();
-            return null;
+        if(minValue != 0.0 || maxValue != 10.0){
+            filterByRatings = true;
         }
-        */
-        ratings.add((float)5.0);
-
+        for(double d=minValue; d <= maxValue; d+=0.5){
+            ratings.add((float)d);
+        }
 
         ArrayList<Whiskey> whiskeys = whiskeyDb.getRecords();
 

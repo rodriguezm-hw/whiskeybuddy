@@ -16,9 +16,11 @@
 
 
         <ScrollView
+            android:id="@+id/scrollStyle"
             android:layout_width="0dp"
             android:layout_weight="33"
-            android:layout_height="fill_parent" >
+            android:layout_height="fill_parent"
+            android:requiresFadingEdge="vertical">
 
             <LinearLayout
                 android:id="@+id/layoutStyle"
@@ -30,10 +32,12 @@
         </ScrollView>
 
         <ScrollView
+            android:id="@+id/scrollCost"
             android:layout_width="0dp"
             android:layout_weight="33"
             android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp" >
+            android:layout_marginLeft="10dp"
+            android:requiresFadingEdge="vertical">
 
             <LinearLayout
                 android:id="@+id/layoutCost"
@@ -43,14 +47,40 @@
             </LinearLayout>
         </ScrollView>
 
-        <com.palcoholics.whiskeybuddy.widget.RangeBar.RangeBar
-            xmlns:custom="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/ratingBar"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="33"
             android:layout_height="fill_parent"
-            custom:tickCount="10" />
+            android:orientation="vertical">
 
+            <com.palcoholics.whiskeybuddy.widget.RangeBar.RangeBar
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/ratingBar"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="88"
+                custom:tickCount="21" />
+
+            <TextView
+                android:id="@+id/LabelRatingRange"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Critic Rating"/>
+
+            <TextView
+                android:id="@+id/textRatingRange"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="6"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:text="0 - 10"/>
+
+        </LinearLayout>
     </LinearLayout>
 
     <Button
