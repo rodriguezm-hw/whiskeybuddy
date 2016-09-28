@@ -115,13 +115,14 @@ public class CatalogFragment extends ListFragment implements RefreshableFragment
         if(adapter == null) {
             adapter = new WhiskeyAdapter(
                     getActivity(),
-                    whiskeyDb.getRecords(((MainActivity) getActivity()).getCurrentSort()),
+                    whiskeyDb.getRecords(),
                     true,
-                    userWhiskeyDb
+                    userWhiskeyDb,
+                    whiskeyDb
             );
         }else{ //otherwise clear the current list of records in the adapter and get the new list
             adapter.clear();
-            adapter.addAll(whiskeyDb.getRecords(((MainActivity)getActivity()).getCurrentSort()));
+            adapter.addAll(whiskeyDb.getRecords());
         }
 
         // updating listview

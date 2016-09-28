@@ -113,13 +113,14 @@ public class FavoritesFragment extends ListFragment implements RefreshableFragme
         //if adapter hasn't yet been created, then make one
         if(adapter == null) {
             adapter = new WhiskeyAdapter(getActivity(),
-                    whiskeyDb.getRecords(favoriteWhiskeyIds,((MainActivity) getActivity()).getCurrentSort()),
+                    whiskeyDb.getRecords(favoriteWhiskeyIds),
                     false,
-                    userWhiskeyDb
+                    userWhiskeyDb,
+                    whiskeyDb
             );
         }else{ //otherwise clear the current list of records in the adapter and get the new list
             adapter.clear();
-            adapter.addAll(whiskeyDb.getRecords(favoriteWhiskeyIds,((MainActivity)getActivity()).getCurrentSort()));
+            adapter.addAll(whiskeyDb.getRecords(favoriteWhiskeyIds));
         }
 
         // updating listview

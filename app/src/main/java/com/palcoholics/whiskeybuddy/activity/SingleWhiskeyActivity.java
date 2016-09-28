@@ -21,6 +21,7 @@ import com.palcoholics.whiskeybuddy.R;
 import com.palcoholics.whiskeybuddy.database.CostDb;
 import com.palcoholics.whiskeybuddy.database.CountryDb;
 import com.palcoholics.whiskeybuddy.database.StyleDb;
+import com.palcoholics.whiskeybuddy.database.WhiskeyDb;
 import com.palcoholics.whiskeybuddy.model.Cost;
 import com.palcoholics.whiskeybuddy.model.Country;
 import com.palcoholics.whiskeybuddy.model.Style;
@@ -32,9 +33,7 @@ public class SingleWhiskeyActivity extends AppCompatActivity {
     //for accessing data
     private Whiskey whiskey;
     private UserWhiskey userWhiskey;
-    private CountryDb countries;
-    private StyleDb styles;
-    private CostDb costs;
+    private WhiskeyDb whiskeyDb;
 
     private UserWhiskey origUserWhiskey;
     private boolean dataSaved;
@@ -63,10 +62,7 @@ public class SingleWhiskeyActivity extends AppCompatActivity {
             whiskey = (Whiskey) getIntent().getSerializableExtra("Whiskey");
             userWhiskey = (UserWhiskey) getIntent().getSerializableExtra("UserWhiskey");
 
-            countries = CountryDb.getInstance(getApplicationContext());
-            styles = StyleDb.getInstance(getApplicationContext());
-            costs = CostDb.getInstance(getApplicationContext());
-
+            whiskeyDb = WhiskeyDb.getInstance(getApplicationContext());
         }
         catch (ClassCastException e){
             e.printStackTrace();
@@ -107,25 +103,25 @@ public class SingleWhiskeyActivity extends AppCompatActivity {
 
 
         String countryName;
-        Country country = countries.getById(whiskey.getCountryId());
+        Country country = whiskeyDb.getCountryDb().getById(whiskey.getCountryId());
         if(country != null){ countryName = country.getName(); }
         else { countryName = ""; }
         textViewCountry.setText(countryName);
 
         String styleName;
-        Style style = styles.getById(whiskey.getStyleId());
+        Style style = whiskeyDb.getStyleDb().getById(whiskey.getStyleId());
         if(style != null) { styleName = style.getName(); }
         else { styleName = ""; }
         textViewStyle.setText(styleName);
 
         String costName;
-        Cost cost = costs.getById(whiskey.getCostId());
+        Cost cost = whiskeyDb.getCostDb().getById(whiskey.getCostId());
         if(cost != null) { costName = cost.getName(); }
         else { costName = ""; }
         textViewCost.setText(costName);
 
-        criticRating.setText(Float.toString(whiskey.getCriticRating()));
-        userRating.setRating(whiskey.getAvgUserRating());
+        criticRating.setText(Double.toString(whiskey.getCriticRating()));
+        userRating.setRating((float)whiskey.getAvgUserRating());
 
 
         /* Reserved for future implementation

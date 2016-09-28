@@ -1,87 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="85"
-        android:orientation="horizontal" >
-
-
-        <ScrollView
-            android:id="@+id/scrollStyle"
-            android:layout_width="0dp"
-            android:layout_weight="33"
-            android:layout_height="fill_parent"
-            android:requiresFadingEdge="vertical">
-
-            <LinearLayout
-                android:id="@+id/layoutStyle"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-            </LinearLayout>
-        </ScrollView>
-
-        <ScrollView
-            android:id="@+id/scrollCost"
-            android:layout_width="0dp"
-            android:layout_weight="33"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
-            android:requiresFadingEdge="vertical">
-
-            <LinearLayout
-                android:id="@+id/layoutCost"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-            </LinearLayout>
-        </ScrollView>
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="33"
-            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.palcoholics.whiskeybuddy.widget.RangeBar.RangeBar
-                xmlns:custom="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/ratingBar"
+            <com.palcoholics.whiskeybuddy.widget.ExpandablePanel
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/panelStyle"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            app:handle="@+id/handlePanelStyle"
+            app:content="@+id/contentPanelStyle"
+            app:collapsedHeight="1dp"
+            app:animationDuration="25"
+            android:background="@drawable/border_shadow">
+
+            <LinearLayout
+                android:id="@id/handlePanelStyle"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_weight="88"
-                custom:tickCount="21" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/LabelRatingRange"
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="90"
+                    android:text="Style"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:padding="2dp"/>
+
+                <ImageView
+                    android:id="@+id/imgStylePanelIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_arrow_right"/>
+
+            </LinearLayout>
+
+            <org.apmem.tools.layouts.FlowLayout
+                android:id="@id/contentPanelStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="6"
-                android:layout_gravity="center_horizontal"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Critic Rating"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textRatingRange"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="6"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textStyle="bold"
-                android:text="0 - 10"/>
+            </org.apmem.tools.layouts.FlowLayout>
 
+            </com.palcoholics.whiskeybuddy.widget.ExpandablePanel>
+
+            <com.palcoholics.whiskeybuddy.widget.ExpandablePanel
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/panelCost"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                app:handle="@+id/handlePanelCost"
+                app:content="@+id/contentPanelCost"
+                app:collapsedHeight="1dp"
+                app:animationDuration="25"
+                android:background="@drawable/border_shadow">
+
+                <LinearLayout
+                    android:id="@id/handlePanelCost"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="90"
+                        android:text="Cost"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:padding="2dp"/>
+
+                    <ImageView
+                        android:id="@+id/imgCostPanelIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:src="@drawable/ic_arrow_right"/>
+
+                </LinearLayout>
+
+                <org.apmem.tools.layouts.FlowLayout
+                    android:id="@id/contentPanelCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                </org.apmem.tools.layouts.FlowLayout>
+
+            </com.palcoholics.whiskeybuddy.widget.ExpandablePanel>
+
+            <com.palcoholics.whiskeybuddy.widget.ExpandablePanel
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/panelRating"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                app:handle="@+id/handlePanelRating"
+                app:content="@+id/contentPanelRating"
+                app:collapsedHeight="1dp"
+                app:animationDuration="25"
+                android:background="@drawable/border_shadow">
+
+                <LinearLayout
+                    android:id="@id/handlePanelRating"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="90"
+                        android:text="Critic Rating"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:padding="2dp"/>
+
+                    <ImageView
+                        android:id="@+id/imgRatingPanelIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:src="@drawable/ic_arrow_right"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/contentPanelRating"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="5dp">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ToggleButton
+                                android:layout_width="110dp"
+                                android:layout_height="70dp"
+                                android:textOn="Unrated"
+                                android:textOff="Unrated"
+                                android:checked="true"/>
+
+                            <TextView
+                                android:id="@+id/textRatingRange"
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textStyle="bold"
+                                android:text="0.0 - 10.0"/>
+                        </LinearLayout>
+
+                        <com.palcoholics.whiskeybuddy.widget.HorizontalRangeBar.RangeBar
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/ratingBar"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            app:tickCount="21" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.palcoholics.whiskeybuddy.widget.ExpandablePanel>
         </LinearLayout>
-    </LinearLayout>
+
+    </ScrollView>
 
     <Button
         android:id="@+id/btnViewMatches"
@@ -91,4 +195,4 @@
         android:layout_alignParentBottom="true"
         android:text="View Matches" />
 
-</LinearLayout>
+</RelativeLayout>

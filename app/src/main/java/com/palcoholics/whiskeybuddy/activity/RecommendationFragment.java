@@ -11,12 +11,16 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.palcoholics.whiskeybuddy.R;
+import com.palcoholics.whiskeybuddy.database.CostDb;
+import com.palcoholics.whiskeybuddy.database.StyleDb;
 import com.palcoholics.whiskeybuddy.database.UserWhiskeyDb;
+import com.palcoholics.whiskeybuddy.model.Style;
 import com.palcoholics.whiskeybuddy.model.Whiskey;
 import com.palcoholics.whiskeybuddy.database.WhiskeyDb;
 import com.palcoholics.whiskeybuddy.model.UserWhiskey;
 import com.palcoholics.whiskeybuddy.adapter.WhiskeyAdapter;
 import com.palcoholics.whiskeybuddy.utilities.RecommendationEngine;
+import com.palcoholics.whiskeybuddy.utilities.WhiskeySorter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,6 +38,7 @@ public class RecommendationFragment extends ListFragment implements RefreshableF
 
     //for controlling whiskey list
     private WhiskeyAdapter adapter;
+    private WhiskeySorter whiskeySorter;
 
     // Required empty public constructor
     public RecommendationFragment() {}
@@ -59,9 +64,10 @@ public class RecommendationFragment extends ListFragment implements RefreshableF
         super.onActivityCreated(savedInstanceState);
 
         //get reference to database singletons
-        userWhiskeyDb = UserWhiskeyDb.getInstance(getActivity().getApplicationContext());
-        whiskeyDb = WhiskeyDb.getInstance(getActivity().getApplicationContext());
+        userWhiskeyDb = UserWhiskeyDb.getInstance(getContext());
+        whiskeyDb = WhiskeyDb.getInstance(getContext());
 
+        whiskeySorter = new WhiskeySorter(whiskeyDb);
         recEngine = new RecommendationEngine(whiskeyDb, userWhiskeyDb);
 
         //click listener for when someone clicks on list item
@@ -119,8 +125,7 @@ public class RecommendationFragment extends ListFragment implements RefreshableF
     private void showWhiskeyList() {
 
         ArrayList<Whiskey> top = recEngine.getTop();
-        Collections.sort(top, new Whiskey.RatingDescendingComparator());
-
+        top = (ArrayList<Whiskey>)whiskeySorter.sort(top, WhiskeySorter.WhiskeySort.ratingDescending);
 
         //if adapter hasn't yet been created, then make one
         if(adapter == null) {
@@ -128,7 +133,8 @@ public class RecommendationFragment extends ListFragment implements RefreshableF
                     getActivity(),
                     top,
                     false,
-                    userWhiskeyDb
+                    userWhiskeyDb,
+                    whiskeyDb
             );
         }else{ //otherwise clear the current list of records in the adapter and get the new list
             adapter.clear();

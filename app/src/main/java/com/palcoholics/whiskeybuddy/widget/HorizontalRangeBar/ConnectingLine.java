@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License. 
  */
 
-package com.palcoholics.whiskeybuddy.widget.RangeBar;
+package com.palcoholics.whiskeybuddy.widget.HorizontalRangeBar;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -29,11 +29,11 @@ class ConnectingLine {
     private final Paint mPaint;
 
     private final float mConnectingLineWeight;
-    private final float mX;
+    private final float mY;
 
     // Constructor /////////////////////////////////////////////////////////////
 
-    ConnectingLine(Context ctx, float x, float connectingLineWeight, int connectingLineColor) {
+    ConnectingLine(Context ctx, float y, float connectingLineWeight, int connectingLineColor) {
 
         final Resources res = ctx.getResources();
 
@@ -47,7 +47,7 @@ class ConnectingLine {
         mPaint.setStrokeWidth(mConnectingLineWeight);
         mPaint.setAntiAlias(true);
 
-        mX = x;
+        mY = y;
     }
 
     // Package-Private Methods /////////////////////////////////////////////////
@@ -56,10 +56,10 @@ class ConnectingLine {
      * Draw the connecting line between the two thumbs.
      * 
      * @param canvas the Canvas to draw to
-     * @param topThumb the top thumb
-     * @param bottomThumb the bottom thumb
+     * @param leftThumb the left thumb
+     * @param rightThumb the right thumb
      */
-    void draw(Canvas canvas, Thumb topThumb, Thumb bottomThumb) {
-        canvas.drawLine(mX, topThumb.getY(), mX, bottomThumb.getY(), mPaint);
+    void draw(Canvas canvas, Thumb leftThumb, Thumb rightThumb) {
+        canvas.drawLine(leftThumb.getX(), mY, rightThumb.getX(), mY, mPaint);
     }
 }

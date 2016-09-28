@@ -1,5 +1,7 @@
 package com.palcoholics.whiskeybuddy.utilities;
 
+import com.palcoholics.whiskeybuddy.database.CostDb;
+import com.palcoholics.whiskeybuddy.database.StyleDb;
 import com.palcoholics.whiskeybuddy.database.UserWhiskeyDb;
 import com.palcoholics.whiskeybuddy.database.WhiskeyDb;
 import com.palcoholics.whiskeybuddy.model.UserWhiskey;
@@ -18,6 +20,7 @@ public class RecommendationEngine {
     private WhiskeyDb whiskeyDb;
     private UserWhiskeyDb userWhiskeyDb;
     private ArrayList<UserWhiskey> reviews;
+    private WhiskeySorter whiskeySorter;
 
     private TreeMap<Integer, ArrayList<Whiskey>> rankSorted;
 
@@ -25,6 +28,7 @@ public class RecommendationEngine {
         this.whiskeyDb = whiskeyDb;
         this.userWhiskeyDb = userWhiskeyDb;
 
+        whiskeySorter = new WhiskeySorter(whiskeyDb);
         reviews = new ArrayList<UserWhiskey>();
 
         List<UserWhiskey> records = userWhiskeyDb.getRecords();
@@ -62,8 +66,8 @@ public class RecommendationEngine {
         ArrayList<Whiskey> top = new ArrayList<Whiskey>();
 
         //if the user has made no reviews, just return top critic rated
-        if (reviews.size() >= 0) {
-            top = whiskeyDb.getRecords(WhiskeyDb.WhiskeySort.ratingDescending);
+        if (reviews.size() <= 0) {
+            top = (ArrayList<Whiskey>)whiskeySorter.sort(whiskeyDb.getRecords(), WhiskeySorter.WhiskeySort.ratingDescending);
 
         } else {  //otherwise get top 10 that have the closest rank
 
@@ -82,8 +86,10 @@ public class RecommendationEngine {
                     ArrayList<Whiskey> found = findClosest(w, step, top);
                     if (found != null) {
                         int amountToAdd = Math.min(maxInclude, found.size());
-                        top.addAll(found.subList(0, amountToAdd - 1));
-                        numFound += amountToAdd;
+                        if(amountToAdd > 0) {
+                            top.addAll(found.subList(0, amountToAdd));
+                            numFound += amountToAdd;
+                        }
                     }
 
                     if (numFound >= 10) {
@@ -135,7 +141,7 @@ public class RecommendationEngine {
                 Whiskey compare = nearby.get(i);
                 //don't include anything with a review! don't include anything that has been added to the current match results
                 if (userWhiskeyDb.getRecord(compare.getId()) == null &&
-                        currentTop.contains(compare)) {
+                        !currentTop.contains(compare)) {
                     found.add(compare);
                 }
             }

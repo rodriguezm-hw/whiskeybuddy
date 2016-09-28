@@ -3,6 +3,8 @@ package com.palcoholics.whiskeybuddy.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -27,10 +29,10 @@ public class Whiskey implements Serializable {
     private String costKey;
 
     @SerializedName("whiskey_metacritic")
-    private float metacriticRating;  /*metacritic rating is an average of critic ratings*/
+    private double metacriticRating;  /*metacritic rating is an average of critic ratings*/
 
     @SerializedName("whiskey_avg_user_rating")
-    private float avgUserRating;
+    private double avgUserRating;
 
     @SerializedName("whiskey_simrank")
     private int simRank;
@@ -48,11 +50,11 @@ public class Whiskey implements Serializable {
     public String getCostId(){
         return this.costKey;
     }
-    public float getCriticRating(){
-        return roundToHalf(this.metacriticRating);
+    public double getCriticRating(){
+        return this.metacriticRating;
     }
-    public float getAvgUserRating(){
-        return roundToHalf(this.avgUserRating);
+    public double getAvgUserRating(){
+        return roundToHalf(this.avgUserRating); //clean any bad data; this should always be a value of half
     }
     public int getRank() { return simRank; }
 
@@ -61,74 +63,15 @@ public class Whiskey implements Serializable {
         return this.name;
     }
 
-
     //converts a 10 point scale score to 5 point scale score
     //see: http://www-01.ibm.com/support/docview.wss?uid=swg21482329
-    private float convert10to5(float rating10Pt){
+    private double convert10to5(double rating10Pt){
 
         return ((4 * (rating10Pt - 1) / 9) + 1);
     }
 
-    private float roundToHalf(float x) {
-        return (float) (Math.ceil(x * 2) / 2);
-    }
-
-
-    //Custom comparators
-    public static class NameAscendingComparator implements Comparator<Whiskey> {
-        @Override
-        public int compare(Whiskey w1, Whiskey w2) {
-            return w1.getName().compareTo(w2.getName());
-        }
-    }
-
-    public static class NameDescendingComparator implements Comparator<Whiskey> {
-        @Override
-        public int compare(Whiskey w1, Whiskey w2) {
-            return -1 * w1.getName().compareTo(w2.getName());
-        }
-    }
-
-    public static class CostAscendingComparator implements Comparator<Whiskey> {
-        @Override
-        public int compare(Whiskey w1, Whiskey w2) {
-            return 1; //TODO
-        }
-    }
-
-    public static class CostDescendingComparator implements Comparator<Whiskey> {
-        @Override
-        public int compare(Whiskey w1, Whiskey w2) {
-            return 1; //TODO
-        }
-    }
-
-    public static class RatingAscendingComparator implements Comparator<Whiskey> {
-        @Override
-        public int compare(Whiskey w1, Whiskey w2) {
-            return Float.compare(w1.getCriticRating(),w2.getCriticRating());
-        }
-    }
-
-    public static class RatingDescendingComparator implements Comparator<Whiskey> {
-        @Override
-        public int compare(Whiskey w1, Whiskey w2) {
-            return -1 * Float.compare(w1.getCriticRating(),w2.getCriticRating());
-        }
-    }
-
-
-    public static class RankAscendingComparator implements Comparator<Whiskey> {
-        @Override
-        public int compare(Whiskey w1, Whiskey w2) {
-            return (w2.getRank() - w1.getRank());
-        }
-    }
-
-    public static class RankDescendingComparator implements Comparator<Whiskey> {
-        @Override
-        public int compare(Whiskey w1, Whiskey w2) {
-            return (w1.getRank() - w2.getRank());        }
+    private double roundToHalf(double x) {
+        return (Math.ceil(x * 2.0) / 2.0);
     }
 
 }

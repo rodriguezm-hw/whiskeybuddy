@@ -17,27 +17,4 @@
                 android:title="Sort by cost" />
         </menu>
     </item>
-
-    <item
-        android:id="@+id/menuLogOut"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_action_logout"
-        android:title="Log out" />
-
-    <!--
-    <item
-        android:title="@string/search_title"
-        android:icon="@drawable/ic_action_filter"
-        app:showAsAction="ifRoom">
-
-        <menu>
-            <item
-                android:id="menuFilterType"
-                android:title="Filter by type"></item>
-
-        </menu>
-
-    </item>
-    #TODO future; not sure how to cleanly implement this
-    -->
 </menu>

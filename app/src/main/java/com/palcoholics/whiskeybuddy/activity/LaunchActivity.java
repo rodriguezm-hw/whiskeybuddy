@@ -78,10 +78,7 @@ public class LaunchActivity extends AppCompatActivity {
 
                 //load the whiskey databases
                 UserWhiskeyDb.loadInstance(getApplicationContext(), userWhiskeys);
-                WhiskeyDb.loadInstance(getApplicationContext(), whiskeyList);
-                CountryDb.loadInstance(getApplicationContext(), countries);
-                StyleDb.loadInstance(getApplicationContext(), styles);
-                CostDb.loadInstance(getApplicationContext(), costs);
+                WhiskeyDb.loadInstance(getApplicationContext(), whiskeyList, costs, styles, countries);
 
                 Intent i = new Intent(LaunchActivity.this, MainActivity.class);
                 startActivity(i);

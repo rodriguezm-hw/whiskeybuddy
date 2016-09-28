@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.palcoholics.whiskeybuddy.R;
 import com.palcoholics.whiskeybuddy.database.CostDb;
 import com.palcoholics.whiskeybuddy.database.UserWhiskeyDb;
+import com.palcoholics.whiskeybuddy.database.WhiskeyDb;
 import com.palcoholics.whiskeybuddy.model.Cost;
 import com.palcoholics.whiskeybuddy.model.UserWhiskey;
 import com.palcoholics.whiskeybuddy.model.Whiskey;
@@ -21,12 +22,14 @@ public class WhiskeyAdapter extends ArrayAdapter<Whiskey> {
 
     private boolean showUserInfo;
     private UserWhiskeyDb userWhiskeyDb;
+    private WhiskeyDb whiskeyDb;
 
-    public WhiskeyAdapter(Context context, ArrayList<Whiskey> whiskeys, boolean showUserInfo, UserWhiskeyDb userWhiskeyDb) {
+    public WhiskeyAdapter(Context context, ArrayList<Whiskey> whiskeys, boolean showUserInfo, UserWhiskeyDb userWhiskeyDb, WhiskeyDb whiskeyDb) {
         super(context, 0, whiskeys);
 
         this.showUserInfo = showUserInfo;
         this.userWhiskeyDb = userWhiskeyDb;
+        this.whiskeyDb = whiskeyDb;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -51,10 +54,10 @@ public class WhiskeyAdapter extends ArrayAdapter<Whiskey> {
 
         // Setting all values in listview
         title.setText(whiskey.getName());
-        rating.setText(Float.toString(whiskey.getCriticRating()));
+        rating.setText(Double.toString(whiskey.getCriticRating()));
 
         String costName;
-        Cost whiskeyCost = CostDb.getInstance(getContext()).getById(whiskey.getCostId());
+        Cost whiskeyCost = whiskeyDb.getCostDb().getById(whiskey.getCostId());
         if(whiskeyCost != null) { costName = whiskeyCost.getName(); }
         else { costName = ""; }
         cost.setText(costName);

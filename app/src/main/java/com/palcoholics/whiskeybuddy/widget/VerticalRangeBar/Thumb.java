@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License. 
  */
 
-package com.palcoholics.whiskeybuddy.widget.RangeBar;
+package com.palcoholics.whiskeybuddy.widget.VerticalRangeBar;
 
 import android.content.Context;
 import android.content.res.Resources;

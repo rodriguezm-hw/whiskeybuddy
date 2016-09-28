@@ -19,22 +19,14 @@ import android.view.MenuItem;
 import com.palcoholics.whiskeybuddy.R;
 import com.palcoholics.whiskeybuddy.database.UserWhiskeyDb;
 import com.palcoholics.whiskeybuddy.database.WhiskeyDb;
+import com.palcoholics.whiskeybuddy.model.Whiskey;
 import com.palcoholics.whiskeybuddy.utilities.SessionManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    //track current state of activity
-    private WhiskeyDb.WhiskeySort currentSort;
-    private int currentFragmentId;
-
     //for controlling view
     private ViewPager viewPager;
     private TabsPagerAdapter adapter;
-
-    //Getter for the current sort method for the whiskey lists
-    public WhiskeyDb.WhiskeySort getCurrentSort(){
-        return currentSort;
-    }
 
     //AppCompatActivity method
     // creates the ActionBar menu list
@@ -42,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the options menu from XML
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search_menu, menu);  //search
-        inflater.inflate(R.menu.options, menu);      //actions
+        inflater.inflate(R.menu.main_options, menu);      //actions
 
         // Get the SearchView and set the searchable configuration
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
@@ -61,42 +52,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
 
-        //tracks if child fragment should be refreshed
-        boolean refresh = false;
-
         switch (item.getItemId()) {
-            case R.id.menuSortName:
-                if(currentSort == WhiskeyDb.WhiskeySort.nameAscending){
-                    currentSort = WhiskeyDb.WhiskeySort.nameDescending;
-                }
-                else {
-                    currentSort = WhiskeyDb.WhiskeySort.nameAscending;
-                }
-                refresh = true;
-                break;
-
-            case R.id.menuSortCost:
-                if(currentSort == WhiskeyDb.WhiskeySort.costAscending){
-                    currentSort = WhiskeyDb.WhiskeySort.costDescending;
-                }
-                else {
-                    currentSort = WhiskeyDb.WhiskeySort.costAscending;
-                }
-                refresh = true;
-                break;
-
-            case R.id.menuSortRating:
-                if(currentSort == WhiskeyDb.WhiskeySort.ratingDescending){  //by default, sort rating by descending
-                    currentSort = WhiskeyDb.WhiskeySort.ratingAscending;
-                }
-                else {
-                    currentSort = WhiskeyDb.WhiskeySort.ratingDescending;
-                }
-                refresh = true;
-                break;
-
             case R.id.menuLogOut:
-
                 //clear singleton user database
                 UserWhiskeyDb.clearInstance(getApplicationContext());
 
@@ -117,15 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        if (refresh) {
-            //refresh the current fragment
-            RefreshableFragment fragment = (RefreshableFragment) adapter.instantiateItem(viewPager, currentFragmentId);
-            if(fragment != null) {
-                if (fragment != null) {
-                    fragment.refresh();
-                }
-            }
-        }
         return true;
     }
 
@@ -153,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                 if (fragment != null) {
                     fragment.refresh();
                 }
-                currentFragmentId = position;
             }
 
             @Override
@@ -164,9 +111,6 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
 
-        //initialize starting conditions
-        currentSort = WhiskeyDb.WhiskeySort.nameAscending;
-        currentFragmentId = 0;
     }
 
     //The adapter for controlling the Fragment tabs
