@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
 
+import com.google.gson.Gson;
+import com.palcoholics.whiskeybuddy.model.User;
+
 public class SessionManager {
     // LogCat tag
     private static String TAG = SessionManager.class.getSimpleName();
@@ -16,6 +19,7 @@ public class SessionManager {
 
     Editor editor;
     Context _context;
+    Gson gson;
 
     // Shared pref mode
     int PRIVATE_MODE = 0;
@@ -24,7 +28,7 @@ public class SessionManager {
     private static final String PREF_NAME = "WhiskeyBuddyLogin";
 
     private static final String KEY_IS_LOGGED_IN = "isLoggedIn";
-    private static final String KEY_LOGIN_ID = "loggedInUserId";
+    private static final String KEY_LOGIN_USER = "loggedInUser";
 
 
     //Function to load singleton
@@ -40,19 +44,21 @@ public class SessionManager {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
+        gson = new Gson();
     }
 
-    public void setLogin(String userId) {
+    public void setLogin(User user) {
+        String jsonUser = gson.toJson(user);
 
         editor.putBoolean(KEY_IS_LOGGED_IN, true);
-        editor.putString(KEY_LOGIN_ID, userId);
+        editor.putString(KEY_LOGIN_USER, jsonUser);
 
         editor.commit();
     }
 
     public void clearLogin(){
         editor.putBoolean(KEY_IS_LOGGED_IN, false);
-        editor.putString(KEY_LOGIN_ID, "");
+        editor.putString(KEY_LOGIN_USER, null);
 
         editor.commit();
     }
@@ -61,5 +67,22 @@ public class SessionManager {
         return pref.getBoolean(KEY_IS_LOGGED_IN, false);
     }
 
-    public String getLoginId() { return pref.getString(KEY_LOGIN_ID, ""); }
+    public User getLoggedInUser() {
+        String jsonUser = pref.getString(KEY_LOGIN_USER, "");
+        User user = gson.fromJson(jsonUser, User.class);
+
+        return user;
+    }
+
+    public void saveLoggedInUser(User user) {
+        if(user != null) {
+            String jsonUser = gson.toJson(user);
+
+            editor.putBoolean(KEY_IS_LOGGED_IN, true);
+            editor.putString(KEY_LOGIN_USER, jsonUser);
+
+            editor.commit();
+        }
+    }
+
 }

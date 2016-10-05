@@ -29,7 +29,7 @@ import java.util.Collections;
 /**
  * Fragment that hosts the list of all available whiskeys.
  */
-public class RecommendationFragment extends ListFragment implements RefreshableFragment {
+public class RecommendationFragment extends ListFragment {
 
     //for accessing data
     private UserWhiskeyDb userWhiskeyDb;
@@ -43,9 +43,7 @@ public class RecommendationFragment extends ListFragment implements RefreshableF
     // Required empty public constructor
     public RecommendationFragment() {}
 
-    //RefreshableFragment method
-    // called to refresh the list of whiskeys from the updated whiskey database
-    @Override
+    //called to refresh the list of whiskeys from the updated whiskey database
     public void refresh() {
         showWhiskeyList();
     }
@@ -68,7 +66,7 @@ public class RecommendationFragment extends ListFragment implements RefreshableF
         whiskeyDb = WhiskeyDb.getInstance(getContext());
 
         whiskeySorter = new WhiskeySorter(whiskeyDb);
-        recEngine = new RecommendationEngine(whiskeyDb, userWhiskeyDb);
+        recEngine = RecommendationEngine.getInstance(whiskeyDb, userWhiskeyDb);
 
         //click listener for when someone clicks on list item
         ListView listView = getListView();
@@ -132,7 +130,7 @@ public class RecommendationFragment extends ListFragment implements RefreshableF
             adapter = new WhiskeyAdapter(
                     getActivity(),
                     top,
-                    false,
+                    true,
                     userWhiskeyDb,
                     whiskeyDb
             );

@@ -7,7 +7,6 @@ import com.google.gson.annotations.SerializedName;
  */
 public class UserWhiskeyRequest {
 
-
     @SerializedName("user_whiskey")
     private UserWhiskey userWhiskey;
 

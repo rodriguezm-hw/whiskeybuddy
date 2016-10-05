@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/ic_action_person"
+        app:showAsAction="ifRoom"
+        android:title="@string/app_name">
+        <menu>
+
+            <item
+                android:id="@+id/menuProfile"
+                android:icon="@drawable/ic_action_account"
+                android:title="Profile" />
+
+            <item
+                android:id="@+id/menuFavorites"
+                android:icon="@drawable/ic_action_favorite"
+                android:title="Favorites" />
+
+            <item
+                android:id="@+id/menuLogOut"
+                app:showAsAction="always"
+                android:icon="@drawable/ic_action_logout"
+                android:title="Log out" />
+
+       </menu>
+    </item>
+
+</menu>

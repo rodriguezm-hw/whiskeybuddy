@@ -22,7 +22,7 @@ public class WhiskeyDb implements Serializable {
     //for singleton design pattern
     private static WhiskeyDb uniqInstance;
 
-    private HashMap<Integer,Whiskey> whiskeys;
+    private HashMap<String, Whiskey> whiskeys;
     private CostDb costDb;
     private StyleDb styleDb;
     private CountryDb countryDb;
@@ -31,7 +31,7 @@ public class WhiskeyDb implements Serializable {
     //private constructor; all places should reference the singleton
     private WhiskeyDb(List<Whiskey> whiskeyList)
     {
-        whiskeys = new HashMap<Integer, Whiskey>();
+        whiskeys = new HashMap<String, Whiskey>();
 
         for (Whiskey w:whiskeyList) {
             whiskeys.put(w.getId(), w);
@@ -73,8 +73,8 @@ public class WhiskeyDb implements Serializable {
     }
 
     //get all whiskey records for given list of IDs
-    public Whiskey getRecord(int whiskeyId){
-        int[] whiskeyIds = {whiskeyId};
+    public Whiskey getRecord(String whiskeyId){
+        String[] whiskeyIds = {whiskeyId};
         ArrayList<Whiskey> whiskeys = getRecords(whiskeyIds);
 
         if(whiskeys.size() > 0) { return whiskeys.get(0); }
@@ -82,11 +82,11 @@ public class WhiskeyDb implements Serializable {
     }
 
     //get all whiskey records for given list of IDs
-    public ArrayList<Whiskey> getRecords(int[] whiskeyIds){
+    public ArrayList<Whiskey> getRecords(String[] whiskeyIds){
         ArrayList<Whiskey> matchingWhiskeys = new ArrayList<Whiskey>();
 
         if(whiskeyIds != null && whiskeyIds.length > 0) {
-            for (int id : whiskeyIds) {
+            for (String id : whiskeyIds) {
                 if (whiskeys.containsKey(id)) {
                     matchingWhiskeys.add(whiskeys.get(id));
                 }
@@ -101,7 +101,7 @@ public class WhiskeyDb implements Serializable {
     public ArrayList<Whiskey> searchRecords(String query) {
         ArrayList<Whiskey> matchingWhiskeys = new ArrayList<Whiskey>();
 
-        for(HashMap.Entry<Integer, Whiskey> entry : whiskeys.entrySet()) {
+        for(HashMap.Entry<String, Whiskey> entry : whiskeys.entrySet()) {
             Whiskey w = entry.getValue();
 
             if(w.getName().toLowerCase().contains(query.toLowerCase())){

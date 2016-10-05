@@ -125,7 +125,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="90"
-                        android:text="Critic Rating"
+                        android:text="Average Critic Rating"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:padding="2dp"/>
 

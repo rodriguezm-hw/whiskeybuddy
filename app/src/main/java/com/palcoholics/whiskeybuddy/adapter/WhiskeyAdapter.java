@@ -1,6 +1,7 @@
 package com.palcoholics.whiskeybuddy.adapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -20,14 +21,14 @@ import com.palcoholics.whiskeybuddy.model.Whiskey;
 
 public class WhiskeyAdapter extends ArrayAdapter<Whiskey> {
 
-    private boolean showUserInfo;
+    private boolean hideUserInfo;
     private UserWhiskeyDb userWhiskeyDb;
     private WhiskeyDb whiskeyDb;
 
-    public WhiskeyAdapter(Context context, ArrayList<Whiskey> whiskeys, boolean showUserInfo, UserWhiskeyDb userWhiskeyDb, WhiskeyDb whiskeyDb) {
+    public WhiskeyAdapter(Context context, List<Whiskey> whiskeys, boolean hideUserInfo, UserWhiskeyDb userWhiskeyDb, WhiskeyDb whiskeyDb) {
         super(context, 0, whiskeys);
 
-        this.showUserInfo = showUserInfo;
+        this.hideUserInfo = hideUserInfo;
         this.userWhiskeyDb = userWhiskeyDb;
         this.whiskeyDb = whiskeyDb;
     }
@@ -39,10 +40,10 @@ public class WhiskeyAdapter extends ArrayAdapter<Whiskey> {
         // Check if an existing view is being reused, otherwise inflate the view
 
         if (convertView == null) {
-            if(showUserInfo){
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_whiskey, parent, false);
-            } else {
+            if(hideUserInfo){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_whiskey_without_user_info, parent, false);
+            } else {
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_whiskey, parent, false);
             }
         }
 
@@ -62,7 +63,7 @@ public class WhiskeyAdapter extends ArrayAdapter<Whiskey> {
         else { costName = ""; }
         cost.setText(costName);
 
-       if(showUserInfo) {
+       if(!hideUserInfo) {
            ImageView userInfo = (ImageView)convertView.findViewById(R.id.userImg); // thumb image
            if (userWhiskey != null) {
                if (userWhiskey.isFavorite()) {

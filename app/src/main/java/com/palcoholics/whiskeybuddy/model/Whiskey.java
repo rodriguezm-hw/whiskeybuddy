@@ -14,7 +14,7 @@ import java.util.List;
 public class Whiskey implements Serializable {
 
     @SerializedName("whiskey_id")
-    private int id;
+    private String id;
 
     @SerializedName("whiskey_name")
     private String name;
@@ -37,7 +37,7 @@ public class Whiskey implements Serializable {
     @SerializedName("whiskey_simrank")
     private int simRank;
 
-    public int getId(){
+    public String getId(){
         return this.id;
     }
     public String getName(){

@@ -52,8 +52,8 @@ public class RangeBar extends View {
     private static final int DEFAULT_THUMB_IMAGE_NORMAL = R.drawable.seek_thumb_normal;
     private static final int DEFAULT_THUMB_IMAGE_PRESSED = R.drawable.seek_thumb_pressed;
 
-    // Corresponds to android.R.color.holo_blue_light.
-    private static final int DEFAULT_CONNECTING_LINE_COLOR = 0xff33b5e5;
+    // Corresponds to R.color.colorAccent
+    private static final int DEFAULT_CONNECTING_LINE_COLOR = Color.parseColor("#009688");;
 
     // Indicator value tells Thumb.java whether it should draw the circle or not
     private static final float DEFAULT_THUMB_RADIUS_DP = -1;

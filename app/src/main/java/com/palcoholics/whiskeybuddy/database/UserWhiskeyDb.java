@@ -69,7 +69,7 @@ public class UserWhiskeyDb implements Serializable {
 
         //update local
         for (int i = 0; i < userWhiskeys.size(); i++) {
-            if (userWhiskeys.get(i).getWhiskeyId() == userWhiskey.getWhiskeyId()) {
+            if (userWhiskeys.get(i).getWhiskeyId().equals(userWhiskey.getWhiskeyId())) {
                 userWhiskeys.set(i, userWhiskey);
                 found = true;
                 break;
@@ -84,9 +84,9 @@ public class UserWhiskeyDb implements Serializable {
         SessionManager session = SessionManager.getInstance(context);
         UserWhiskeyApi api = ApiClient.getClient().create(UserWhiskeyApi.class);
 
-        UserWhiskeyRequest request = new UserWhiskeyRequest(userWhiskey, session.getLoginId());
+        UserWhiskeyRequest request = new UserWhiskeyRequest(userWhiskey, session.getLoggedInUser().getId());
 
-        Call<ResponseBody> response = api.updateUserWhiskey(request);  //session.getLoginId(),
+        Call<ResponseBody> response = api.updateUserWhiskey(request);
         response.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -96,7 +96,7 @@ public class UserWhiskeyDb implements Serializable {
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 // Log error here since request failed
-                Log.e(LaunchActivity.class.getSimpleName(), t.toString());
+                Log.e(UserWhiskeyDb.class.getSimpleName(), t.toString());
             }
         });
     }
@@ -106,13 +106,13 @@ public class UserWhiskeyDb implements Serializable {
     }
 
     //get user information for a specific whiskey
-    public UserWhiskey getRecord(int whiskeyId) {
+    public UserWhiskey getRecord(String whiskeyId) {
 
         if(userWhiskeys != null && userWhiskeys.size() > 0) {
             UserWhiskey userWhiskey;
 
             for (UserWhiskey u : userWhiskeys) {
-                if (u.getWhiskeyId() == whiskeyId) {
+                if (u.getWhiskeyId().equals(whiskeyId)) {
                     return u;
                 }
             }
@@ -121,11 +121,11 @@ public class UserWhiskeyDb implements Serializable {
     }
 
     //get all user whiskey entries that have been marked as favorites
-    public int[] getAllFavorites(){
-        int[] favIds = null;
+    public String[] getAllFavorites(){
+        String[] favIds = null;
 
         if(userWhiskeys != null) {
-            ArrayList<Integer> favArray = new ArrayList<Integer>();
+            ArrayList<String> favArray = new ArrayList<String>();
 
             for (UserWhiskey u : userWhiskeys) {
                 if (u.isFavorite()) {
@@ -134,15 +134,39 @@ public class UserWhiskeyDb implements Serializable {
             }
 
             if (favArray.size() > 0) {
-                favIds = new int[favArray.size()];
-                Iterator<Integer> iterator = favArray.iterator();
+                favIds = new String[favArray.size()];
+                Iterator<String> iterator = favArray.iterator();
                 for (int i = 0; i < favIds.length; i++) {
-                    favIds[i] = iterator.next().intValue();
+                    favIds[i] = iterator.next().toString();
                 }
             }
         }
 
         return favIds;
+    }
+
+    public void delete(UserWhiskey userWhiskey){
+
+        //update local
+        userWhiskeys.remove(userWhiskey);
+
+        //update remote
+        SessionManager session = SessionManager.getInstance(context);
+        UserWhiskeyApi api = ApiClient.getClient().create(UserWhiskeyApi.class);
+
+        Call<ResponseBody> response = api.deleteUserWhiskey(userWhiskey.getWhiskeyId(), session.getLoggedInUser().getId());
+        response.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                // Log error here since request failed
+                Log.e(UserWhiskeyDb.class.getSimpleName(), t.toString());
+            }
+        });
     }
 
     public int count(){

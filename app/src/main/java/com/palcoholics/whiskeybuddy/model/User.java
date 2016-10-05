@@ -1,11 +1,15 @@
 package com.palcoholics.whiskeybuddy.model;
 
+import android.media.Image;
+
 import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 
 /**
  * Created by pietimer on 9/17/2016.
  */
-public class User {
+public class User implements Serializable{
 
     @SerializedName("user_id")
     private String id;
@@ -19,11 +23,15 @@ public class User {
     @SerializedName("created_at")
     private String createdAt;
 
-    public User(String id, String name, String email, String createdAt){
+    @SerializedName("user_profile_picture_url")
+    private String profilePictureUrl;
+
+    public User(String id, String name, String email, String createdAt, String profilePictureUrl){
         this.id = id;
         this.name = name;
         this.email = email;
         this.createdAt = createdAt;
+        this.profilePictureUrl = profilePictureUrl;
     }
 
     //getter for the user ID
@@ -55,5 +63,8 @@ public class User {
     public void setCreatedAt(String newCreatedAt){
         this.createdAt = newCreatedAt;
     }
+
+    public String getProfilePictureUrl() { return this.profilePictureUrl; }
+    public void setProfilePictureUrl(String newProfilePictureUrl) { this.profilePictureUrl = newProfilePictureUrl; }
 
 }

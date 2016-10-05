@@ -139,9 +139,11 @@
                         android:layout_column="2" />
 
                 </TableRow>
-                <TableRow>
+                <TableRow
+                    android:minHeight="30dp">
                     <TextView
                         android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:gravity="center_vertical"
                         android:text="Avg User"
                         android:id="@+id/labelUserRating"
                         android:layout_column="1"
@@ -150,13 +152,13 @@
 
                     <RatingBar
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
 
                         android:id="@+id/userRatingBar"
                         android:layout_column="2"
                         android:isIndicator="true"
-                        style="@style/ReadOnlyRatingBar"
-                        android:theme="@style/ReadOnlyRatingBar" />
+                        style="@style/ReadOnlyRatingBarSmall"
+                        android:theme="@style/ReadOnlyRatingBarSmall" />
                 </TableRow>
 
             </TableLayout>

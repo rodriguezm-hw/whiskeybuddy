@@ -98,10 +98,6 @@ public class SingleWhiskeyActivity extends AppCompatActivity {
         TextView criticRating = (TextView) findViewById(R.id.criticRating);
         RatingBar userRating = (RatingBar) findViewById(R.id.userRatingBar);
 
-        LayerDrawable stars = (LayerDrawable) userRating.getProgressDrawable();
-        stars.getDrawable(2).setColorFilter(Color.DKGRAY, PorterDuff.Mode.SRC_ATOP);
-
-
         String countryName;
         Country country = whiskeyDb.getCountryDb().getById(whiskey.getCountryId());
         if(country != null){ countryName = country.getName(); }

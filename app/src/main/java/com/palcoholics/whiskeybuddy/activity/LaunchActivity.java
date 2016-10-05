@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.palcoholics.whiskeybuddy.R;
+import com.palcoholics.whiskeybuddy.activity.User.LoginActivity;
 import com.palcoholics.whiskeybuddy.database.CostDb;
 import com.palcoholics.whiskeybuddy.database.CountryDb;
 import com.palcoholics.whiskeybuddy.database.StyleDb;
@@ -16,6 +17,7 @@ import com.palcoholics.whiskeybuddy.database.WhiskeyDb;
 import com.palcoholics.whiskeybuddy.model.Cost;
 import com.palcoholics.whiskeybuddy.model.Country;
 import com.palcoholics.whiskeybuddy.model.Style;
+import com.palcoholics.whiskeybuddy.model.User;
 import com.palcoholics.whiskeybuddy.model.UserWhiskey;
 import com.palcoholics.whiskeybuddy.model.Whiskey;
 import com.palcoholics.whiskeybuddy.model.WhiskeyResponse;
@@ -64,33 +66,44 @@ public class LaunchActivity extends AppCompatActivity {
         //load whiskey database information
         InitializeApi initializeApi = ApiClient.getClient().create(InitializeApi.class);
 
-        Call<InitializeResponse> response = initializeApi.initializeActivity(session.getLoginId());
-        response.enqueue(new Callback<InitializeResponse>() {
-            @Override
-            public void onResponse(Call<InitializeResponse> call, Response<InitializeResponse> response) {
+        User user = session.getLoggedInUser();
 
-                //get lists from the response
-                List<Whiskey> whiskeyList = response.body().getWhiskeyResponse();
-                List<UserWhiskey> userWhiskeys = response.body().getUserWhiskeyResponse();
-                List<Country> countries = response.body().getCountryResponse();
-                List<Style> styles = response.body().getStyleResponse();
-                List<Cost> costs = response.body().getCostResponse();
+        if(user != null) {
 
-                //load the whiskey databases
-                UserWhiskeyDb.loadInstance(getApplicationContext(), userWhiskeys);
-                WhiskeyDb.loadInstance(getApplicationContext(), whiskeyList, costs, styles, countries);
+            Call<InitializeResponse> response = initializeApi.initializeActivity(user.getId());
+            response.enqueue(new Callback<InitializeResponse>() {
+                @Override
+                public void onResponse(Call<InitializeResponse> call, Response<InitializeResponse> response) {
 
-                Intent i = new Intent(LaunchActivity.this, MainActivity.class);
-                startActivity(i);
-                finish();
+                    //get lists from the response
+                    List<Whiskey> whiskeyList = response.body().getWhiskeyResponse();
+                    List<UserWhiskey> userWhiskeys = response.body().getUserWhiskeyResponse();
+                    List<Country> countries = response.body().getCountryResponse();
+                    List<Style> styles = response.body().getStyleResponse();
+                    List<Cost> costs = response.body().getCostResponse();
 
-            }
+                    //load the whiskey databases
+                    UserWhiskeyDb.loadInstance(getApplicationContext(), userWhiskeys);
+                    WhiskeyDb.loadInstance(getApplicationContext(), whiskeyList, costs, styles, countries);
 
-            @Override
-            public void onFailure(Call<InitializeResponse> call, Throwable t) {
-                // Log error here since request failed
-                Log.e(LaunchActivity.class.getSimpleName(), t.toString());
-            }
-        });
+                    Intent i = new Intent(LaunchActivity.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+
+                }
+
+                @Override
+                public void onFailure(Call<InitializeResponse> call, Throwable t) {
+                    // Log error here since request failed
+                    Log.e(LaunchActivity.class.getSimpleName(), t.toString());
+                }
+            });
+        }
+        else {
+            session.clearLogin();
+            Intent i = new Intent(LaunchActivity.this, LoginActivity.class);
+            startActivity(i);
+            finish();
+        }
     }
 }

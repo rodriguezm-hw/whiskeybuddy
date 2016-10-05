@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="0.9"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Whiskey name -->
+        <TextView
+            android:id="@+id/whiskeyName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dip"/>
+
+        <!-- user rating -->
+        <RatingBar
+            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="10dp"
+
+            android:id="@+id/userRatingBar"
+            android:isIndicator="true"
+            style="@style/ReadOnlyRatingBarSmall"
+            android:theme="@style/ReadOnlyRatingBarSmall" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- favorite icon -->
+            <ImageView
+                android:id="@+id/userImg"
+                android:scaleType="fitXY"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+            <!-- user notes -->
+            <TextView
+                android:id="@+id/textUserNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dp"
+                android:paddingStart="4dp"
+                android:layout_toRightOf="@id/userImg"
+                android:layout_toEndOf="@id/userImg"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:lines="1"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="0.1"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+
+        <!-- Right arrow -->
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_right_arrow"/>
+
+        <!-- delete button -->
+        <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_action_delete"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

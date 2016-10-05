@@ -39,7 +39,7 @@ import java.util.Set;
 /**
  * Created by pietimer on 9/23/2016.
  */
-public class BrowseFragment extends Fragment implements RefreshableFragment {
+public class BrowseFragment extends Fragment {
 
     private CostDb costDb;
     private StyleDb styleDb;
@@ -55,13 +55,6 @@ public class BrowseFragment extends Fragment implements RefreshableFragment {
     private ToggleButton btnAllCosts;
 
     private ArrayList<ExpandablePanel> panels;
-
-    //RefreshableFragment method
-    // called to refresh the list of whiskeys from the updated whiskey database
-    @Override
-    public void refresh() {
-
-    }
 
     //ListFragment method
     // associates layout with this activity
@@ -93,9 +86,15 @@ public class BrowseFragment extends Fragment implements RefreshableFragment {
             public void onClick(View v) {
                 ArrayList<Whiskey> filteredResults = getFilteredResults();
 
+                String title = getResources().getString(R.string.search_results_title);
                 if(filteredResults != null){
-                    Intent intent = new Intent(getActivity(), SearchResultsActivity.class);
-                    intent.putExtra("filteredResults", (ArrayList<Whiskey>)filteredResults);
+                    title = title + " (" + filteredResults.size() + ")";
+                }
+
+                if(filteredResults != null){
+                    Intent intent = new Intent(getActivity(), CatalogActivity.class);
+                    intent.putExtra("whiskeys", (ArrayList<Whiskey>)filteredResults);
+                    intent.putExtra("title", title);
                     startActivity(intent);
                 }
             }

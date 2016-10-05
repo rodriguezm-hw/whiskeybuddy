@@ -10,47 +10,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5175c6a0-72c3-460b-b63c-77c72bdf9e4b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/layouts_1_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/WhiskeySorter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/ExpandablePanel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/Bar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/ConnectingLine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/MeasureSpecMode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/RangeBar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/Thumb.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/border_shadow.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/list_options.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main_options.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/menu/options.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/facebook_android_sdk_4_15_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/facebook_android_sdk_4_16_0.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/RangeBar/Bar.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/VerticalRangeBar/Bar.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/RangeBar/ConnectingLine.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/VerticalRangeBar/ConnectingLine.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/RangeBar/MeasureSpecMode.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/VerticalRangeBar/MeasureSpecMode.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/RangeBar/RangeBar.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/VerticalRangeBar/RangeBar.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/RangeBar/Thumb.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/VerticalRangeBar/Thumb.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/no_user.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/User/ProfileActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/UserWhiskeyAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/UserDb.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserProfilePictureResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/ScalingUtilities.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_empty.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_empty_small.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_filled.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_filled_small.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_small.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_user_whiskey.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/search.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/CatalogFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/FavoritesFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/RefreshableFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_five_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_four_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_three_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_toggle_star.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_two_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_five_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_four_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_three_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_toggle_star.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_two_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_five_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_four_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_three_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_toggle_star.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_two_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_five_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_four_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_three_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_toggle_star.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_two_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_five_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_four_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_three_stars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_toggle_star.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_two_stars.png" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/User/LoginActivity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/RegisterActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/User/RegisterActivity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SearchResultsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/CatalogActivity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/menu/main_options.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/user_options.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_24_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_24_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_24_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_compat_24_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_24_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_ui_24_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/BrowseFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/BrowseFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/CatalogFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/CatalogFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/FavoritesFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/FavoritesFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/LaunchActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/LaunchActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/RecommendationFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/RecommendationFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SearchResultsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SearchResultsActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SingleWhiskeyActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SingleWhiskeyActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/WhiskeyAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/WhiskeyAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/UserWhiskeyDb.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/UserWhiskeyDb.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/WhiskeyDb.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/WhiskeyDb.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/User.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserWhiskey.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserWhiskey.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserWhiskeyRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserWhiskeyRequest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/Whiskey.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/Whiskey.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserApi.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserWhiskeyApi.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserWhiskeyApi.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/RecommendationEngine.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/RecommendationEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/SessionManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/SessionManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/RangeBar.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/RangeBar.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_browse.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_browse.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_catalog.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_catalog.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_favorites.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_favorites.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_search_results.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_search_results.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_single_whiskey.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_single_whiskey.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_whiskey.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_whiskey.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_whiskey_without_user_info.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_whiskey_without_user_info.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
     </list>
     <ignored path="WhiskeyBuddy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,52 +119,85 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BrowseFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/BrowseFragment.java">
+      <file leaf-file-name="ProfileActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/User/ProfileActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="159" column="21" selection-start-line="159" selection-start-column="21" selection-end-line="159" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CatalogActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/CatalogActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="195" column="12" selection-start-line="195" selection-start-column="12" selection-end-line="198" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#setUpStyleButtons#0;class#BrowseFragment#0" expanded="false" />
-                <element signature="e#3567#3954#0" expanded="true" />
-                <element signature="e#3953#3954#0" expanded="true" />
-                <element signature="e#4328#4510#0" expanded="true" />
-                <element signature="e#4509#4510#0" expanded="true" />
-                <element signature="e#5653#6015#0" expanded="true" />
-                <element signature="e#6014#6015#0" expanded="true" />
-                <element signature="method#setUpCostButtons#0;class#BrowseFragment#0" expanded="false" />
-                <element signature="e#6339#6723#0" expanded="true" />
-                <element signature="e#6722#6723#0" expanded="true" />
-                <element signature="e#7090#7270#0" expanded="true" />
-                <element signature="e#7269#7270#0" expanded="true" />
-                <element signature="e#8408#8769#0" expanded="true" />
-                <element signature="e#8768#8769#0" expanded="true" />
-                <element signature="method#setUpRangeSelection#0;class#BrowseFragment#0" expanded="false" />
-                <element signature="method#toggleSet#0;class#BrowseFragment#0" expanded="false" />
-                <element signature="method#setUpExpandablePanels#0;class#BrowseFragment#0" expanded="false" />
-                <element signature="method#collapseAllOtherPanels#0;class#BrowseFragment#0" expanded="false" />
-                <element signature="e#15509#15510#0" expanded="true" />
-                <element signature="e#15555#15556#0" expanded="true" />
+                <element signature="e#6718#6773#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_browse.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_browse.xml">
+      <file leaf-file-name="WhiskeyAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/WhiskeyAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="150" column="47" selection-start-line="150" selection-start-column="47" selection-end-line="150" selection-end-column="47" />
+            <state relative-caret-position="34">
+              <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BrowseFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/BrowseFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
               <folding>
-                <element signature="e#534#2351#0" expanded="false" />
-                <element signature="e#2365#4315#0" expanded="false" />
-                <element signature="e#4917#5901#0" expanded="false" />
+                <element signature="e#2864#2919#0" expanded="true" />
+                <element signature="method#setUpCostButtons#0;class#BrowseFragment#0" expanded="false" />
+                <element signature="method#setUpRangeSelection#0;class#BrowseFragment#0" expanded="false" />
+                <element signature="method#toggleSet#0;class#BrowseFragment#0" expanded="false" />
+                <element signature="method#setUpExpandablePanels#0;class#BrowseFragment#0" expanded="false" />
+                <element signature="method#collapseAllOtherPanels#0;class#BrowseFragment#0" expanded="false" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecommendationFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/RecommendationFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_favorites.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_favorites.xml">
           <provider editor-type-id="android-designer2">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -138,8 +207,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
-        <option value="layoutResourceFile_vertical" />
         <option value="ASClass" />
+        <option value="layoutResourceFile_vertical" />
         <option value="resourceFile" />
       </list>
     </option>
@@ -1833,57 +1902,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/two_star.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/nav_right.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/oval_shape.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/shadow.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/tooltip.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/rangebar_view_temp.xml" />
-        <option value="$PROJECT_DIR$/app/src/androidTest/java/com/palcoholics/whiskeybuddy/ExampleInstrumentedTest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/rangebar_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/RangeBarVertical.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/PixelUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/RangeSeekBar.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/multislider_scrubber_progress_horizontal_holo_light.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/MultiSlider.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/MultiSliderVertical.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/RangeBar/MeasureSpecMode.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/RangeBar/Thumb.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/RangeBar/ConnectingLine.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/RangeBar/Bar.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_single_whiskey.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/RangeBar/RangeBar.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/list_options.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/options.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/main_options.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/WhiskeyDb.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/LaunchActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/WhiskeySorter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SingleWhiskeyActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/WhiskeyAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/CatalogFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/FavoritesFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SearchResultsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/RecommendationFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/Whiskey.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/RecommendationEngine.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/BrowseFragmentOld.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_browse_old.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/FilterSelection.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
-        <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_browse.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/ExpandablePanel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/border_shadow.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_catalog.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/search.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/RangeBar.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/BrowseFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/user_options.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_browse.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/User/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/LaunchActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/ScalingUtilities.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/SessionManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserWhiskeyRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/RecommendationEngine.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/ServiceGenerator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/ServiceGenerator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserProfilePictureResponse.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserApi.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/User.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/UserDb.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_filled.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_empty.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/read_only_ratingbar_full.xml" />
+        <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_single_whiskey.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_small.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_empty_small.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_filled_small.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_single_whiskey.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_user_whiskey.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/UserWhiskeyAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/UserWhiskeyDb.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/Whiskey.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/WhiskeyDb.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserWhiskey.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserWhiskeyApi.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/User/RegisterActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SingleWhiskeyActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/FavoritesFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_whiskey.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_whiskey_without_user_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/FavoritesActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_favorites.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/User/ProfileActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SearchResultsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/WhiskeyAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/CatalogActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/RecommendationFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/BrowseFragment.java" />
       </list>
     </option>
   </component>
@@ -1918,161 +1987,100 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="AndroidView">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="whiskeybuddy" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="whiskeybuddy" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="whiskeybuddy" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2228,97 +2236,136 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="AndroidView">
+      <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="whiskeybuddy" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="whiskeybuddy" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WhiskeyBuddy" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="whiskeybuddy" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhiskeyBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="whiskeybuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="activity" />
@@ -2343,9 +2390,12 @@
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.palcoholics.whiskeybuddy.activity.User" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\pietimer\AndroidStudioProjects\WhiskeyBuddy\app\src\main\java\com\palcoholics\whiskeybuddy\widget\HorizontalRangeBar" />
       <recent name="C:\Users\pietimer\AndroidStudioProjects\WhiskeyBuddy\app\src\main\res\drawable" />
+      <recent name="C:\Users\pietimer\AndroidStudioProjects\WhiskeyBuddy\app\src\main\java\com\palcoholics\whiskeybuddy\widget\HorizontalRangeBar" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -2671,7 +2721,7 @@
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40668523" sideWeight="0.50771207" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40668523" sideWeight="0.4922879" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40668523" sideWeight="0.4922879" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2689,7 +2739,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2114396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20951156" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2699,7 +2750,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2707,8 +2757,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5051414" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25905293" sideWeight="0.49485862" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40668523" sideWeight="0.50771207" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40668523" sideWeight="0.4922879" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2716,20 +2766,20 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39972144" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38579386" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2114396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20951156" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -2758,469 +2808,459 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/BrowseFragment.java</url>
-          <line>387</line>
+          <line>386</line>
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/User/ProfileActivity.java</url>
+          <line>112</line>
+          <properties />
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/UserWhiskeyDb.java</url>
+          <line>156</line>
+          <properties />
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="36" />
+      <option name="time" value="92" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/multislider_scrubber_control_disabled_holo.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/seek_thumb_normal.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserWhiskeyResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/VerticalRangeBar/MeasureSpecMode.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/SessionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="209">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/VerticalRangeBar/Thumb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="93" column="33" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/VerticalRangeBar/ConnectingLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_whiskey.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="15" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_single_whiskey.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="141" column="26" selection-start-line="141" selection-start-column="26" selection-end-line="141" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/VerticalRangeBar/Bar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/list_options.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <element signature="e#275#293#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/options.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search_results.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main_options.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <element signature="e#219#241#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/Cost.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserRequest.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserWhiskeyRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/content/ContextWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/ServiceGenerator.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/InitializeResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="36" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserProfilePictureResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/ApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="93" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/LaunchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="80" column="103" selection-start-line="80" selection-start-column="103" selection-end-line="80" selection-end-column="103" />
-          <folding />
+        <state relative-caret-position="17">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/WhiskeyDb.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="43" column="63" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
-          <folding>
-            <element signature="e#2173#2174#0" expanded="false" />
-            <element signature="e#2237#2238#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SearchResultsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/UserDb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="211" column="87" selection-start-line="211" selection-start-column="87" selection-end-line="211" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SingleWhiskeyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="142" column="41" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/WhiskeyAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/WhiskeySorter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        <state relative-caret-position="1411">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="134">
+          <caret line="1857" column="0" selection-start-line="1857" selection-start-column="0" selection-end-line="1857" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/CatalogFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_single_whiskey.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="239">
+          <caret line="158" column="72" selection-start-line="158" selection-start-column="72" selection-end-line="158" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/FavoritesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="118" column="29" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/Whiskey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="92" column="40" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_browse.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_favorites.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_catalog.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="4" selection-end-column="55" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="12" selection-end-column="15" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_toggle_star.png">
+      <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_browse.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_small.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/VerticalRangeBar/RangeBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="574" column="36" selection-start-line="574" selection-start-column="36" selection-end-line="574" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/attrs.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_empty.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        <state relative-caret-position="289">
+          <caret line="17" column="60" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/RecommendationEngine.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_empty_small.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="92" column="21" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+        <state relative-caret-position="289">
+          <caret line="17" column="66" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/border_shadow.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_filled.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        <state relative-caret-position="289">
+          <caret line="17" column="52" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full_filled_small.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ratingbar_full.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        <state relative-caret-position="102">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_catalog.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        <state relative-caret-position="334">
+          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/RecommendationFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+        <state relative-caret-position="264">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#1278#2188#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_single_whiskey.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="117" column="45" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/Whiskey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+        <state relative-caret-position="421">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/WhiskeyDb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="115" column="42" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/UserWhiskeyAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+          <folding>
+            <element signature="e#3140#4640#0" expanded="true" />
+            <element signature="e#3594#4021#0" expanded="true" />
+            <element signature="e#4020#4021#0" expanded="true" />
+            <element signature="e#4075#4438#0" expanded="true" />
+            <element signature="e#4437#4438#0" expanded="true" />
+            <element signature="e#4639#4640#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/utilities/RecommendationEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="156" column="63" selection-start-line="156" selection-start-column="61" selection-end-line="156" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="33" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/rest/UserWhiskeyApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/model/UserWhiskey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#1006#1007#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/database/UserWhiskeyDb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="158" column="21" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="21" />
+          <folding>
+            <element signature="e#4031#4039#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/CatalogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/FilterSelection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+        <state relative-caret-position="139">
+          <caret line="50" column="51" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/Thumb.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/SingleWhiskeyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        <state relative-caret-position="17">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/RangeBar.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_user_whiskey.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="85" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/MeasureSpecMode.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_whiskey_without_user_info.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+        <state relative-caret-position="110">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/ConnectingLine.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_whiskey.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+        <state relative-caret-position="136">
+          <caret line="36" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/HorizontalRangeBar/Bar.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/FavoritesActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+        <state relative-caret-position="296">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="57" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/widget/ExpandablePanel.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_favorites.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="125" column="5" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/User/RegisterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="87" column="0" selection-start-line="84" selection-start-column="20" selection-end-line="87" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3847#3855#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_browse_old.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/User/ProfileActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="159" column="21" selection-start-line="159" selection-start-column="21" selection-end-line="159" selection-end-column="21" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/CatalogActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="195" column="12" selection-start-line="195" selection-start-column="12" selection-end-line="198" selection-end-column="13" />
+          <folding>
+            <element signature="e#6718#6773#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/BrowseFragmentOld.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/adapter/WhiskeyAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="150" column="17" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
+        <state relative-caret-position="34">
+          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/RecommendationFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/palcoholics/whiskeybuddy/activity/BrowseFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
+        <state relative-caret-position="302">
+          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setUpStyleButtons#0;class#BrowseFragment#0" expanded="false" />
-            <element signature="e#3567#3954#0" expanded="true" />
-            <element signature="e#3953#3954#0" expanded="true" />
-            <element signature="e#4328#4510#0" expanded="true" />
-            <element signature="e#4509#4510#0" expanded="true" />
-            <element signature="e#5653#6015#0" expanded="true" />
-            <element signature="e#6014#6015#0" expanded="true" />
+            <element signature="e#2864#2919#0" expanded="true" />
             <element signature="method#setUpCostButtons#0;class#BrowseFragment#0" expanded="false" />
-            <element signature="e#6339#6723#0" expanded="true" />
-            <element signature="e#6722#6723#0" expanded="true" />
-            <element signature="e#7090#7270#0" expanded="true" />
-            <element signature="e#7269#7270#0" expanded="true" />
-            <element signature="e#8408#8769#0" expanded="true" />
-            <element signature="e#8768#8769#0" expanded="true" />
             <element signature="method#setUpRangeSelection#0;class#BrowseFragment#0" expanded="false" />
             <element signature="method#toggleSet#0;class#BrowseFragment#0" expanded="false" />
             <element signature="method#setUpExpandablePanels#0;class#BrowseFragment#0" expanded="false" />
             <element signature="method#collapseAllOtherPanels#0;class#BrowseFragment#0" expanded="false" />
-            <element signature="e#15509#15510#0" expanded="true" />
-            <element signature="e#15555#15556#0" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_browse.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="150" column="47" selection-start-line="150" selection-start-column="47" selection-end-line="150" selection-end-column="47" />
-          <folding>
-            <element signature="e#534#2351#0" expanded="false" />
-            <element signature="e#2365#4315#0" expanded="false" />
-            <element signature="e#4917#5901#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
   </component>

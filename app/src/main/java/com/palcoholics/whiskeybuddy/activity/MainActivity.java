@@ -17,12 +17,22 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.palcoholics.whiskeybuddy.R;
+import com.palcoholics.whiskeybuddy.activity.User.LoginActivity;
+import com.palcoholics.whiskeybuddy.activity.User.ProfileActivity;
 import com.palcoholics.whiskeybuddy.database.UserWhiskeyDb;
 import com.palcoholics.whiskeybuddy.database.WhiskeyDb;
 import com.palcoholics.whiskeybuddy.model.Whiskey;
 import com.palcoholics.whiskeybuddy.utilities.SessionManager;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private SessionManager session;
+
+    //databases
+    UserWhiskeyDb userWhiskeyDb;
+    WhiskeyDb whiskeyDb;
 
     //for controlling view
     private ViewPager viewPager;
@@ -34,14 +44,15 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the options menu from XML
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_options, menu);      //actions
+        inflater.inflate(R.menu.search, menu);
+        inflater.inflate(R.menu.user_options, menu);
 
         // Get the SearchView and set the searchable configuration
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
 
         // Assumes current activity is the searchable activity
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this, SearchResultsActivity.class)));
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this, CatalogActivity.class)));
         searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 
         return true;
@@ -51,26 +62,46 @@ public class MainActivity extends AppCompatActivity {
     // reacts to clicks on the ActionBar options
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent;
 
         switch (item.getItemId()) {
+            case R.id.menuProfile:
+
+                intent = new Intent(MainActivity.this, ProfileActivity.class);
+                //intent.putExtra("User", session.getLoggedInUser());
+                startActivity(intent);
+
+                break;
+
+            case R.id.menuFavorites:
+                //launch catalog activity with list of user favorites
+                String[] favoriteWhiskeyIds = userWhiskeyDb.getAllFavorites();
+                ArrayList<Whiskey> favWhiskeys =  whiskeyDb.getRecords(favoriteWhiskeyIds);
+
+                intent = new Intent(this, CatalogActivity.class);
+                intent.putExtra("whiskeys", favWhiskeys);
+                intent.putExtra("hideUserInfo", true);
+                intent.putExtra("title", "Favorites");
+                startActivity(intent);
+
+                break;
+
             case R.id.menuLogOut:
                 //clear singleton user database
                 UserWhiskeyDb.clearInstance(getApplicationContext());
-
-                SessionManager session = SessionManager.getInstance(getApplicationContext());
 
                 // Check if user is already logged in or not
                 if (session.isLoggedIn()) {
                     session.clearLogin();
 
-                    Intent intent = new Intent(MainActivity.this,
-                            LoginActivity.class);
+                    intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 }
                 break;
 
             default:
+
                 break;
         }
 
@@ -84,29 +115,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        session = SessionManager.getInstance(getApplicationContext());
+        whiskeyDb = WhiskeyDb.getInstance(getApplicationContext());
+        userWhiskeyDb = UserWhiskeyDb.getInstance(getApplicationContext());
+
         // set up tabs
         viewPager = (ViewPager) findViewById(R.id.pager);
         adapter = new TabsPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
-
-        //need this to ensure that the favorites activity keeps refreshing
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(final int position, final float v, final int i2) {
-            }
-
-            @Override
-            public void onPageSelected(final int position) {
-                RefreshableFragment fragment = (RefreshableFragment) adapter.instantiateItem(viewPager, position);
-                if (fragment != null) {
-                    fragment.refresh();
-                }
-            }
-
-            @Override
-            public void onPageScrollStateChanged(final int position) {
-            }
-        });
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);

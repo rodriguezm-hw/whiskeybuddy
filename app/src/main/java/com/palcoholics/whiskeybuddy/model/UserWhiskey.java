@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class UserWhiskey implements Serializable {
 
     @SerializedName("whiskey_id_fk")
-    private final int whiskeyId;
+    private final String whiskeyId;
 
     @SerializedName("user_is_favorite")
     private int isFavorite;
@@ -23,7 +23,7 @@ public class UserWhiskey implements Serializable {
     private String notes;
 
     //must construct for a specific whiskey
-    public UserWhiskey(int id){
+    public UserWhiskey(String id){
         this.whiskeyId = id;
     }
 
@@ -37,7 +37,7 @@ public class UserWhiskey implements Serializable {
     }
 
     //getter for the specific whiskey
-    public int getWhiskeyId(){
+    public String getWhiskeyId(){
         return whiskeyId;
     }
 
@@ -102,7 +102,7 @@ public class UserWhiskey implements Serializable {
             sameNotes = this.notes.equals(compareTo.notes);
         }
 
-        return (this.whiskeyId == compareTo.whiskeyId &&
+        return (this.whiskeyId.equals(compareTo.whiskeyId) &&
                 this.rating == compareTo.rating &&
                 this.isFavorite == compareTo.isFavorite &&
                 sameNotes);

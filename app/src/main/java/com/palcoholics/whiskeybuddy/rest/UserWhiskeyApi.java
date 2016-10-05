@@ -11,6 +11,7 @@ import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -24,5 +25,10 @@ public interface UserWhiskeyApi {
 
     @POST("update_user_whiskey.php")
     Call<ResponseBody> updateUserWhiskey(@Body UserWhiskeyRequest request);
+
+    @Headers("Content Type: application/json")
+    @FormUrlEncoded
+    @POST("delete_user_whiskey.php")
+    Call<ResponseBody> deleteUserWhiskey(@Field("whiskey_id") String whiskeyId, @Field("user_id") String userId);
 
 }
