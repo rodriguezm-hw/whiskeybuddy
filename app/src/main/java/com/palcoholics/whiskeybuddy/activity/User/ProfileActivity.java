@@ -2,20 +2,17 @@ package com.palcoholics.whiskeybuddy.activity.User;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Environment;
-import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -30,7 +27,6 @@ import android.widget.Toast;
 import com.palcoholics.whiskeybuddy.R;
 import com.palcoholics.whiskeybuddy.activity.SingleWhiskeyActivity;
 import com.palcoholics.whiskeybuddy.adapter.UserWhiskeyAdapter;
-import com.palcoholics.whiskeybuddy.adapter.WhiskeyAdapter;
 import com.palcoholics.whiskeybuddy.database.UserDb;
 import com.palcoholics.whiskeybuddy.database.UserWhiskeyDb;
 import com.palcoholics.whiskeybuddy.database.WhiskeyDb;
@@ -41,15 +37,8 @@ import com.palcoholics.whiskeybuddy.utilities.ScalingUtilities;
 import com.palcoholics.whiskeybuddy.utilities.SessionManager;
 import com.palcoholics.whiskeybuddy.utilities.WhiskeySorter;
 
-import org.w3c.dom.Text;
-
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -63,9 +52,9 @@ public class ProfileActivity extends AppCompatActivity {
     private WhiskeyDb whiskeyDb;
 
     //UI Controls
-    private ImageView profilePic;
-    private TextView userName;
-    private TextView userEmail;
+    private ImageView ivProfilePic;
+    private TextView txtUserName;
+    private TextView txtUserEmail;
 
     //for controlling whiskey list
     private UserWhiskeyAdapter adapter;
@@ -95,7 +84,6 @@ public class ProfileActivity extends AppCompatActivity {
         setupEmail();
         setupPicture();
         setupReviews();
-
 
         setTitle("Profile");
     }
@@ -131,102 +119,115 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void setupPicture() {
-        profilePic = (ImageView) findViewById(R.id.imgProfilePicture);
-        profilePic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectPicture();
-            }
-        });
+        ivProfilePic = (ImageView) findViewById(R.id.imgProfilePicture);
+
+        if(!user.isFacebookUser()) {
+            ivProfilePic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectPicture();
+                }
+            });
+        }
 
         //set up the picture from the existing url
         if(user.getProfilePictureUrl() != null && !user.getProfilePictureUrl().isEmpty()) {
-            new DownloadImageTask(profilePic).execute(user.getProfilePictureUrl());
+            new DownloadImageTask(ivProfilePic, user.getProfilePictureUrl(), user.isFacebookUser()).execute();
         }
     }
 
     private void setupName() {
         origName = user.getName();
-        userName = (EditText) findViewById(R.id.txtUserName);
-        userName.setText(user.getName());
-        userName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    if (userName.getText().toString().isEmpty()) {
-                        userName.setText(origName);
-                    } else {
-                        user.setName(userName.getText().toString());
+        txtUserName = (EditText) findViewById(R.id.txtUserName);
+        txtUserName.setText(user.getName());
+
+        if(user.isFacebookUser()) {
+            txtUserName.setInputType(InputType.TYPE_NULL);
+        } else {
+            txtUserName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus) {
+                        if (txtUserName.getText().toString().isEmpty()) {
+                            txtUserName.setText(origName);
+                        } else {
+                            user.setName(txtUserName.getText().toString());
+                        }
                     }
                 }
-            }
-        });
-        userName.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            });
+            txtUserName.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (userName.getText().toString().isEmpty()) {
-                    user.setName(origName);
-                } else {
-                    user.setName(userName.getText().toString());
                 }
-            }
-        });
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    if (txtUserName.getText().toString().isEmpty()) {
+                        user.setName(origName);
+                    } else {
+                        user.setName(txtUserName.getText().toString());
+                    }
+                }
+            });
+        }
     }
 
     private void setupEmail() {
         origEmail = user.getEmail();
-        userEmail = (EditText) findViewById(R.id.txtUserEmail);
-        userEmail.setText(user.getEmail());
-        userEmail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    if (userEmail.getText().toString().isEmpty()) {
-                        userEmail.setText(origEmail);
-                    } else {
-                        String email = userEmail.getText().toString();
-                        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                            Toast.makeText(getApplicationContext(),
-                                    "E-mail address is not valid and will not be saved", Toast.LENGTH_LONG)
-                                    .show();
+        txtUserEmail = (EditText) findViewById(R.id.txtUserEmail);
+        txtUserEmail.setText(user.getEmail());
+
+        if(user.isFacebookUser()){
+            txtUserEmail.setInputType(InputType.TYPE_NULL);
+        } else {
+            txtUserEmail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus) {
+                        if (txtUserEmail.getText().toString().isEmpty()) {
+                            txtUserEmail.setText(origEmail);
                         } else {
-                            user.setEmail(email);
+                            String email = txtUserEmail.getText().toString();
+                            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                                Toast.makeText(getApplicationContext(),
+                                        "E-mail address is not valid and will not be saved", Toast.LENGTH_LONG)
+                                        .show();
+                            } else {
+                                user.setEmail(email);
+                            }
                         }
                     }
                 }
-            }
-        });
-        userEmail.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            });
+            txtUserEmail.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                String email = userEmail.getText().toString();
-                if (email.isEmpty()) {
-                    user.setEmail(origEmail);
-                } else {
-                    user.setEmail(userEmail.getText().toString());
                 }
-            }
-        });
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    String email = txtUserEmail.getText().toString();
+                    if (email.isEmpty()) {
+                        user.setEmail(origEmail);
+                    } else {
+                        user.setEmail(txtUserEmail.getText().toString());
+                    }
+                }
+            });
+        }
     }
 
     @Override
@@ -358,18 +359,29 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
 
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+    private class DownloadImageTask extends AsyncTask<Void, Void, Bitmap> {
+        private final String baseUrl = "http://maryhikes.com/android_connect/whiskeybuddy/";
+
         ImageView bmImage;
-        private String baseUrl = "http://maryhikes.com/android_connect/whiskeybuddy/";
+        private String imageUrl;
+        private boolean imageIsRemote;
 
 
-        public DownloadImageTask(ImageView bmImage) {
+        public DownloadImageTask(ImageView bmImage, String url, boolean isRemote) {
             this.bmImage = bmImage;
+            this.imageUrl = url;
+            this.imageIsRemote = isRemote;
         }
 
-        protected Bitmap doInBackground(String... urls) {
+        protected Bitmap doInBackground(Void... params) {
 
-            String urldisplay = baseUrl + urls[0];
+            String urldisplay;
+            if(imageIsRemote) {
+                urldisplay = imageUrl;
+            } else {
+                urldisplay = baseUrl + imageUrl;
+            }
+
             Bitmap mIcon11 = null;
             try {
                 InputStream in = new java.net.URL(urldisplay).openStream();

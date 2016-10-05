@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.facebook.login.LoginManager;
 import com.palcoholics.whiskeybuddy.R;
 import com.palcoholics.whiskeybuddy.activity.User.LoginActivity;
 import com.palcoholics.whiskeybuddy.activity.User.ProfileActivity;
@@ -93,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
                 // Check if user is already logged in or not
                 if (session.isLoggedIn()) {
                     session.clearLogin();
+
+                    //log out of facebook
+                    LoginManager.getInstance().logOut();
+
 
                     intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);

@@ -73,7 +73,7 @@
                 android:text="login"
                 android:textColor="@color/registerText" />
 
-            <!-- TODO future
+            <!-- Facebook login -->
             <com.facebook.login.widget.LoginButton
                 android:id="@+id/btnFbLogin"
                 android:layout_width="wrap_content"
@@ -81,8 +81,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp" />
-            -->
-            <!-- Link to Login Screen -->
+
+            <!-- Link to register screen -->
 
             <Button
                 android:id="@+id/btnLinkToRegisterScreen"

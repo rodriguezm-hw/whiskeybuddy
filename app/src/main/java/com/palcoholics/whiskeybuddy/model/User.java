@@ -26,11 +26,15 @@ public class User implements Serializable{
     @SerializedName("user_profile_picture_url")
     private String profilePictureUrl;
 
-    public User(String id, String name, String email, String createdAt, String profilePictureUrl){
+    @SerializedName("user_facebook_id")
+    private String facebookId;
+
+    public User(String id, String name, String email, String createdAt, String facebookId, String profilePictureUrl){
         this.id = id;
         this.name = name;
         this.email = email;
         this.createdAt = createdAt;
+        this.facebookId = facebookId;
         this.profilePictureUrl = profilePictureUrl;
     }
 
@@ -38,7 +42,6 @@ public class User implements Serializable{
     public String getId(){
         return this.id;
     }
-    public void setId(String newId){this.id = newId;}
 
     //getter and setter for user name
     public String getName(){
@@ -56,15 +59,14 @@ public class User implements Serializable{
         this.email = newEmail;
     }
 
-    //getter and setter for when user was created
+    //getter for when user was created
     public String getCreatedAt(){
         return this.createdAt;
     }
-    public void setCreatedAt(String newCreatedAt){
-        this.createdAt = newCreatedAt;
-    }
 
+    //getter and setter for profile picture URL
     public String getProfilePictureUrl() { return this.profilePictureUrl; }
     public void setProfilePictureUrl(String newProfilePictureUrl) { this.profilePictureUrl = newProfilePictureUrl; }
 
+    public boolean isFacebookUser() { return (this.facebookId != null && !this.facebookId.isEmpty()); }
 }

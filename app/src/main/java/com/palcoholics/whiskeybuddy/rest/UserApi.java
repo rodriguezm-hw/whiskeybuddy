@@ -38,6 +38,12 @@ public interface UserApi {
     @POST("update_user.php")
     Call<ResponseBody> updateUser(@Body User user);
 
+    @Headers("Content Type: application/json")
+    @FormUrlEncoded
+    @POST("login_facebook_user.php")
+    Call<UserResponse> loginFacebookUser(@Field("facebook_id") String facebookId, @Field("name") String name, @Field("email") String email);
+
+
     @Multipart
     @POST("upload_profile_picture.php")
     Call<UserProfilePictureResponse> uploadProfilePicture(@Part("user_id") RequestBody userId, @Part MultipartBody.Part file);
