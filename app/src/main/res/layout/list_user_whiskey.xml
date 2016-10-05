@@ -16,18 +16,17 @@
             android:id="@+id/whiskeyName"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dip"/>
+            android:textSize="30sp"/>
 
         <!-- user rating -->
         <RatingBar
-            android:layout_height="30dp"
-            android:layout_width="wrap_content"
-            android:layout_marginBottom="10dp"
-
             android:id="@+id/userRatingBar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+
             android:isIndicator="true"
-            style="@style/ReadOnlyRatingBarSmall"
-            android:theme="@style/ReadOnlyRatingBarSmall" />
+            style="@style/RatingBarMedium"
+            android:theme="@style/RatingBarMedium" />
 
         <RelativeLayout
             android:layout_width="wrap_content"

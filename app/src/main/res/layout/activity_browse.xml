@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
@@ -14,47 +15,47 @@
             android:orientation="vertical">
 
             <com.palcoholics.whiskeybuddy.widget.ExpandablePanel
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/panelStyle"
-            android:orientation="vertical"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            app:handle="@+id/handlePanelStyle"
-            app:content="@+id/contentPanelStyle"
-            app:collapsedHeight="1dp"
-            app:animationDuration="25"
-            android:background="@drawable/border_shadow">
-
-            <LinearLayout
-                android:id="@id/handlePanelStyle"
-                android:layout_width="fill_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/panelStyle"
+                android:orientation="vertical"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_width="fill_parent"
+                app:handle="@+id/handlePanelStyle"
+                app:content="@+id/contentPanelStyle"
+                app:collapsedHeight="1dp"
+                app:animationDuration="25"
+                android:background="@drawable/border_shadow">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="90"
-                    android:text="Style"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:padding="2dp"/>
+                <LinearLayout
+                    android:id="@id/handlePanelStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/imgStylePanelIndicator"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="90"
+                        android:text="Style"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:padding="2dp"/>
+
+                    <ImageView
+                        android:id="@+id/imgStylePanelIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:src="@drawable/ic_arrow_right"/>
+
+                </LinearLayout>
+
+                <org.apmem.tools.layouts.FlowLayout
+                    android:id="@id/contentPanelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:src="@drawable/ic_arrow_right"/>
+                    android:orientation="horizontal">
 
-            </LinearLayout>
-
-            <org.apmem.tools.layouts.FlowLayout
-                android:id="@id/contentPanelStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-            </org.apmem.tools.layouts.FlowLayout>
+                </org.apmem.tools.layouts.FlowLayout>
 
             </com.palcoholics.whiskeybuddy.widget.ExpandablePanel>
 
@@ -183,16 +184,18 @@
                 </LinearLayout>
 
             </com.palcoholics.whiskeybuddy.widget.ExpandablePanel>
+
+            <Button
+                android:id="@+id/btnViewMatches"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="View Matches" />
+
         </LinearLayout>
 
-    </ScrollView>
 
-    <Button
-        android:id="@+id/btnViewMatches"
-        android:layout_width="fill_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="View Matches" />
+    </ScrollView>
 
 </RelativeLayout>

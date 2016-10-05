@@ -5,7 +5,7 @@
     <item
         android:icon="@drawable/ic_action_person"
         app:showAsAction="ifRoom"
-        android:title="@string/app_name">
+        android:title="User">
         <menu>
 
             <item
